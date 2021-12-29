@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -10,27 +11,38 @@ export default function Home() {
 
       <main>
         <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to the Jungle
         </h1>
 
         <p className="description">
-          Get started by editing <code>pages/index.js</code>
+          It's an 8th
         </p>
 
         <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+          <Link href="/themes/ocean">
+            <a className="card item-animation">
+              <h3>Dive into the Ocean &rarr;</h3>
+              <p>Ocean mages.</p>
+            </a>
+          </Link>
 
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+          <Link href="/themes/campfire">
+            <a className="card item-animation">
+              <h3>Sit by the Campfire &rarr;</h3>
+              <p>Infernal annie.</p>
+            </a>
+          </Link>
+
+          <Link href="/themes/winterland">
+            <a className="card item-animation">
+              <h3>Walk through Winterland &rarr;</h3>
+              <p>Snowball Nunu.</p>
+            </a>
+          </Link>
 
           <a
             href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
+            className="card item-animation"
           >
             <h3>Examples &rarr;</h3>
             <p>Discover and deploy boilerplate example Next.js projects.</p>
@@ -38,7 +50,7 @@ export default function Home() {
 
           <a
             href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
+            className="card item-animation"
           >
             <h3>Deploy &rarr;</h3>
             <p>
@@ -186,6 +198,23 @@ export default function Home() {
           .grid {
             width: 100%;
             flex-direction: column;
+          }
+        }
+        
+        // Card animation
+        @media (prefers-reduced-motion: no-preference) {
+          .item-animation {
+            animation: wipe-enter 1s 1;
+            animation-iteration-count: 1;
+          }
+        }
+        
+        @keyframes wipe-enter {
+          0% {
+            transform: scale(0, .025);
+          }
+          50% {
+            transform: scale(1, .025);
           }
         }
       `}</style>

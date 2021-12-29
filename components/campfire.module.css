@@ -1,0 +1,393 @@
+#art {
+    align-items: center;
+    animation: art 10s infinite alternate;
+    background: var(--clr6);
+    box-shadow: 0 15vmin 16vmin -5vmin var(--clr8);
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    justify-content: center;
+    position: relative;
+    width: 100vw;
+}
+
+@keyframes art {
+    0% {
+        box-shadow: 0 10vmin 16vmin -5vmin var(--clr1);
+    }
+    50% {
+        box-shadow: -5vmin 10vmin 16vmin -5vmin var(--clr2);
+    }
+    100% {
+        box-shadow: 0 5vmin 16vmin -5vmin var(--clr3);
+    }
+}
+
+#art::before {
+    background: radial-gradient( var(--clr12) 20%, 20%, var(--clr11) 30%, 30%, var(--clr10) 40%, 40%, var(--clr9) 50%, 50%, var(--clr8) 60%, 60%, var(--clr7) 70%);
+    content: "";
+    border-radius: 100%;
+    bottom: 3vmin;
+    height: 22vmin;
+    position: absolute;
+    width: 90vmin;
+    z-index: 0;
+}
+
+#wood {
+    bottom: 5vmin;
+    display: grid;
+    height: 19vmin;
+    place-items: center;
+    position: absolute;
+    width: 25vmin;
+    z-index: 3;
+}
+
+#wood::after {
+    background-color: var(--clr6);
+    border-radius: 22vmin;
+    content: "";
+    height: 4vmin;
+    position: absolute;
+    transform: rotate(15deg);
+    width: 20vmin;
+    z-index: 15;
+}
+
+#wood::before {
+    background-color: var(--clr6);
+    border-radius: 2vmin;
+    content: "";
+    height: 4vmin;
+    position: absolute;
+    transform: rotate(-15deg);
+    width: 20vmin;
+    z-index: 15;
+}
+
+#wood span {
+    bottom: 28vmin;
+    height: 30px;
+    left: 50%;
+    position: absolute;
+    width: 10px;
+}
+
+#wood span::after {
+    animation: spark2 2s infinite;
+    background: var(--clr3);
+    border-radius: 100%;
+    /* box-shadow: 0 1vmin 1vmin -0.25vmin var(--clr3); */
+    content: '';
+    height: .4vmin;
+    left: 1vmin;
+    position: absolute;
+    width: .25vmin;
+}
+
+@keyframes spark2 {
+    0% {
+        bottom: -32vmin;
+        opacity: 0;
+    }
+    50% {
+        bottom: 5vmin;
+        opacity: 1;
+        left: -1vmin;
+    }
+    100% {
+        opacity: 0;
+        bottom: 10vmin;
+    }
+}
+
+#wood span::before {
+    animation: spark3 3s infinite;
+    background: var(--clr2);
+    border-radius: 100%;
+    box-shadow: 0 1vmin 1vmin -0.25vmin var(--clr3);
+    content: '';
+    height: .6vmin;
+    left: -3vmin;
+    position: absolute;
+    width: .2vmin;
+}
+
+@keyframes spark3 {
+    0% {
+        bottom: -32vmin;
+        opacity: 0;
+    }
+    50% {
+        bottom: 1vmin;
+        opacity: 1;
+        left: 2vmin;
+    }
+    100% {
+        opacity: 0;
+        bottom: 10vmin;
+    }
+}
+
+#fire {
+    animation: fire 4s linear infinite alternate;
+    background: radial-gradient(var(--clr3) 24%, 24%, var(--clr4));
+    bottom: 15vmin;
+    border-radius: 100% 0 100% 100%;
+    box-shadow: -2vmin 2vmin 8vmin -1vmin var(--clr2), 0 0 0 1vmin var(--clr1) inset, 0 0 0 2vmin var(--clr2) inset, 0 0 0 3vmin var(--clr3) inset;
+    display: grid;
+    height: 14vmin;
+    left: 50%;
+    margin: 0 0 0 -7vmin;
+    place-items: center;
+    position: absolute;
+    transform: rotate(-45deg);
+    width: 14vmin;
+    z-index: 4;
+}
+
+@keyframes fire {
+    0%,
+    100% {
+        box-shadow: -2vmin 2vmin 8vmin -1vmin var(--clr2), 0vmin 0vmin 0vmin -1vmin var(--clr2), 0 0 0 1vmin var(--clr1) inset, 0 0 0 2vmin var(--clr2) inset, 0 0 0 3vmin var(--clr3) inset;
+    }
+    50% {
+        box-shadow: -4vmin 2vmin 8vmin -1vmin var(--clr2), 4vmin -1vmin 10vmin -5vmin var(--clr2), -0.3vmin 0 0 1vmin var(--clr1) inset, 0.2vmin -0.3vmin 0 2vmin var(--clr2) inset, 0.2vmin 0.1vmin 0 3vmin var(--clr3) inset;
+    }
+}
+
+#sky {
+    background: radial-gradient( circle at 50%, var(--clr13) 10%, 10%, var(--clr12) 20%, 20%, var(--clr11) 32.5%, 32.5%, var(--clr10) 47.5%, 47.5%, var(--clr9) 65%, 65%, var(--clr8) 85%);
+    border-radius: 0%;
+    display: grid;
+    height: 90vmin;
+    overflow: hidden;
+    place-items: center;
+    position: absolute;
+    top: -36vmin;
+    width: 100vw;
+    z-index: 0;
+}
+
+#moon {
+    background: transparent;
+    border-radius: 100%;
+    box-shadow: -2vmin -1.2vmin 0 var(--clr14) inset;
+    height: 9vmin;
+    position: absolute;
+    top: 4vmin;
+    width: 9vmin;
+    z-index: 5;
+}
+
+#star {
+    bottom: 0;
+    display: grid;
+    height: 50vmin;
+    position: absolute;
+    place-items: center;
+    width: 80vmin;
+    z-index: 20;
+}
+
+#star>* {
+    background-color: var(--clr14);
+    border-radius: 100%;
+    height: 0.8vmin;
+    position: absolute;
+    width: 0.8vmin;
+}
+
+#star>*:nth-child(1) {
+    transform: scale(0.9) translate(-30vmin, -10vmin);
+    box-shadow: 40vmin 12vmin 0 var(--clr14);
+}
+
+#star>*:nth-child(2) {
+    transform: scale(0.6) translate(-30vmin, -20vmin);
+}
+
+#star>*:nth-child(3) {
+    transform: scale(0.72) translate(-8vmin, -10vmin);
+}
+
+#star>*:nth-child(4) {
+    transform: scale(0.9) translate(22vmin, -23vmin);
+}
+
+#star>*:nth-child(5) {
+    transform: scale(0.6) translate(-9vmin, -36vmin);
+}
+
+#star>*:nth-child(6) {
+    transform: scale(0.72) translate(-28vmin, 5vmin);
+}
+
+#star>*:nth-child(7) {
+    transform: scale(0.24) translate(15vmin, -10vmin);
+}
+
+#star>*:nth-child(8) {
+    transform: scale(0.9) translate(35vmin, -5vmin);
+}
+
+#star>*:nth-child(9) {
+    transform: scale(0.6) translate(-35vmin, -10vmin);
+    box-shadow: -10vmin -15vmin 0 var(--clr14);
+}
+
+#star>*:nth-child(10) {
+    transform: scale(0.36) translate(-8vmin, -20vmin);
+}
+
+#star>*:nth-child(11) {
+    box-shadow: -15vmin 15vmin 0 var(--clr14);
+    transform: scale(0.48) translate(60vmin, -20vmin);
+}
+
+#comet {
+    /* background: radial-gradient(circle at 100% 100%, transparent, var(--clr14) 90%); */
+    background-size: 200%;
+    background-position-x: 5vmin;
+    border-radius: 100%;
+    display: grid;
+    height: 0.5vmin;
+    overflow: hidden;
+    position: relative;
+    place-items: center;
+    transform: translate(10vmin, 10vmin) rotate(-45deg);
+    width: 60vmin;
+}
+
+#comet::after {
+    animation: comet 10s 10s linear infinite;
+    background: var(--clr14);
+    box-shadow: 0.5vmin 0 1vmin 0.5vmin var(--clr14);
+    border-radius: 100%;
+    content: "";
+    height: 0.3vmin;
+    position: absolute;
+    right: -25vmin;
+    width: 0.3vmin;
+}
+
+@keyframes comet {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 2000%;
+    }
+}
+
+#mtn,
+#tree {
+    bottom: 0;
+    display: grid;
+    height: 50vmin;
+    position: absolute;
+    place-items: center;
+    width: 100vmin;
+    z-index: 30;
+}
+
+#mtn::after,
+#mtn::before {
+    bottom: -22vmin;
+    border-radius: 3vmin;
+    content: "";
+    height: 40vmin;
+    position: absolute;
+    transform: rotate(45deg);
+    width: 40vmin;
+}
+
+#mtn::after {
+    background-color: var(--clr11);
+    box-shadow: -11vmin 10vmin 0 var(--clr9), 8vmin -20vmin 0 var(--clr1);
+    bottom: -35vmin;
+    right: 17vmin;
+}
+
+#mtn::before {
+    background-color: var(--clr7);
+    box-shadow: 16vmin -12vmin 0 var(--clr6), -8vmin 14vmin 0 var(--clr12);
+    left: 12vmin;
+}
+
+#tree>* {
+    bottom: 0;
+    display: flex;
+    height: 15vmin;
+    justify-content: center;
+    position: absolute;
+    width: 4vmin;
+}
+
+#tree>*::after {
+    border: 5vmin solid transparent;
+    border-bottom-color: var(--clr6);
+    bottom: 7vmin;
+    content: "";
+    height: 2vmin;
+    position: absolute;
+    transform: scale(0.4, 2);
+    width: 1vmin;
+}
+
+#tree>*::before {
+    background-color: var(--clr6);
+    bottom: -2vmin;
+    content: "";
+    height: 5vmin;
+    position: absolute;
+    width: 1vmin;
+}
+
+#tree>*:nth-child(1) {
+    left: 10vmin;
+}
+
+#tree>*:nth-child(2) {
+    left: 20vmin;
+}
+
+#tree>*:nth-child(3) {
+    filter: drop-shadow(5vmin 0 0 var(--clr6));
+    bottom: -1vmin;
+    right: 20vmin;
+    transform: scale(0.75);
+}
+
+#tree>*:nth-child(4) {
+    right: 36vmin;
+    filter: drop-shadow(-7vmin 1vmin 0 var(--clr6));
+    transform: scale(0.8);
+}
+
+#tree>*:nth-child(5) {
+    filter: drop-shadow(-3vmin 0vmin 0 var(--clr6));
+    bottom: -1.5vmin;
+    left: 17vmin;
+    transform: scale(0.7);
+}
+
+#tree>*:nth-child(6) {
+    filter: drop-shadow(7vmin 0vmin 0 var(--clr6));
+    bottom: 0vmin;
+    right: 8vmin;
+    transform: scale(0.9);
+}
+
+#tree>*:nth-child(7) {
+    bottom: -2vmin;
+    right: 6vmin;
+    transform: scale(0.6);
+}
+
+#tree>*:nth-child(8) {
+    filter: drop-shadow(4vmin 0vmin 0 var(--clr6));
+    bottom: -0.2vmin;
+    transform: scale(0.6) translate(10vmin, 3vmin);
+}

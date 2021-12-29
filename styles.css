@@ -1,0 +1,27 @@
+:root {
+    /* ocean colors */
+    --v1: #be91c6;
+    --v2: #8a65cc;
+    --v3: #5e30d9;
+    --transparentv3: #5e30d900;
+    --v4: #3b1895;
+    --s1: #fea798;
+    --s2: #ff846e;
+    --cloud: #fea798;
+
+    /* campfire colors */
+    --clr1: #b54040;
+    --clr2: #cd6d3d;
+    --clr3: #e6993a;
+    --clr4: #fec637;
+    --clr5: #0d1d2d;
+    --clr6: #0f2642;
+    --clr7: #2b2a42;
+    --clr8: #623341;
+    --clr9: #733641;
+    --clr10: #833841;
+    --clr11: #943b40;
+    --clr12: #a43d40;
+    --clr13: #b54040;
+    --clr14: #fff;
+  }
