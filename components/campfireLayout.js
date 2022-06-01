@@ -1,9 +1,13 @@
+import Link from 'next/link'
 import styles from './campfire.module.css'
 
 export default function CampfireLayout({ children }) {
     return (
         // Campfire background
         <div id={styles['art']}>
+            <Link href='/'>
+                <a class='home' id={styles['corner-button']}>Go Back Home</a>
+            </Link>
             <div id={styles['sky']}>
                 <div id={styles['star']}>
                 <span></span>

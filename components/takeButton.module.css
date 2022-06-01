@@ -1,0 +1,28 @@
+/* Take/sources button */
+.take-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #668ad8;
+    width: 7vmin;
+    height: 7vmin;
+    line-height: 7vmin;
+    border-radius: 50%;
+    border: double 4px #668ad8;
+    text-align: center;
+    vertical-align: middle;
+    overflow: hidden;
+    transition: .6s;
+    font-family: Helvetica, sans-serif;
+    font-size: 12px;
+    position: fixed; 
+    bottom: 2vmin;
+    right: 4vmin;
+    cursor: pointer;
+    z-index: 2000;
+  }
+  
+.take-btn:hover{
+  -webkit-transform: rotate(20deg);
+  -ms-transform: rotate(20deg);
+  transform: rotate(20deg);
+}

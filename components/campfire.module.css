@@ -391,3 +391,9 @@
     bottom: -0.2vmin;
     transform: scale(0.6) translate(10vmin, 3vmin);
 }
+
+#corner-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+}

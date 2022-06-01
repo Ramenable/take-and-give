@@ -1,9 +1,13 @@
+import Link from 'next/link'
 import styles from './ocean.module.css'
 
 export default function OceanLayout({ children }) {
     return (
         // Ocean background
         <div class={styles.landscape}>
+        <Link href='/'>
+            <a class='home'>Go Back Home</a>
+        </Link>
 
         <div class={styles['mountain']}></div>
         <div class={`${styles['mountain']} ${styles['mountain-2']}`}></div>
