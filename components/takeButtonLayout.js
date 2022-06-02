@@ -5,7 +5,7 @@ import styles from './takeButton.module.css'
 
 export default function takeButtonLayout({ children }) {
     return (
-        <Popup trigger={<div class={styles['take-btn']}>Take</div>} position="top right">
+        <Popup trigger={<div class={styles['take-btn']}>Source</div>} position="top right">
             <div>Coming soon...</div>
         </Popup>
     )

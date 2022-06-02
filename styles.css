@@ -81,8 +81,18 @@ body {
   align-items: center;
 }
 
-main {
+.pageContainer {
+  display: flex;
+}
+
+.sectionContainer {
   padding: 5rem 0;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+main {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -145,8 +155,6 @@ a {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-
-  max-width: 800px;
   margin-top: 3rem;
 }
 
@@ -209,29 +217,32 @@ a {
 }
 
 /* Sections */
+#introduction {
+}
+
 #projects {
-  height: 300px;
-  width: 100vw;
 }
 
 #people {
-  height: 300px;
-  width: 100vw;
 }
 
-#going {
-  height: 300px;
-  width: 100vw;
+#interests {
+}
+
+/* Applied to all sections */
+.section {
+  height: 100vh;
+  width: 85vw;
 }
 
 /* The sidebar menu */
 .sidebar {
-  height: 100%; /* 100% Full-height */
-  width: 25vmin; /* 0 width */
-  position: fixed; /* Stay in place */
+  height: 100vh; /* 100% Full-height */
+  min-width: 15vw; /* 0 width */
+  position: sticky; /* Stay in place */
   z-index: 1000; /* Stay on top */
-  top: 0;
-  left: 0;
+  top: 0px;
+  left: 0px;
   background-color: #111; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 10vmin; /* Place content 60px from the top */
