@@ -1,5 +1,11 @@
+@import "transition-style";
+
 /* Global styles */
 :root {
+    /* people card values */
+    --surface-color: #d5ede6;
+    --curve: 40;
+
     /* ocean colors */
     --v1: #be91c6;
     --v2: #8a65cc;
@@ -86,7 +92,6 @@ body {
 }
 
 .sectionContainer {
-  padding: 5rem 0;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
@@ -150,6 +155,15 @@ a {
   font-size: 1.5rem;
 }
 
+.introSummary {
+  max-width: 40%;
+  margin: auto;
+  text-align: center;
+  line-height: 3;
+  font-size: 1.5rem;
+}
+
+/* General Cards */
 .grid {
   display: flex;
   align-items: center;
@@ -165,16 +179,29 @@ a {
   text-align: left;
   color: inherit;
   text-decoration: none;
-  border: 1px solid #eaeaea;
   border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 10px 8px 5px 0 rgba(0, 0, 0, 0.2);
   transition: color 0.15s ease, border-color 0.15s ease;
 }
 
 .card:hover,
 .card:focus,
 .card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+  color: #5bd3c7;
+}
+
+.cardWithIcon {
+  display: flex;
+  flex-direction: row;
+}
+
+.cardIcon {
+  flex-shrink: 0;
+  width: 70px;
+  height: 70px;      
+  border-radius: 50%;
+  margin-right: 5%;
 }
 
 .card h3 {
@@ -203,7 +230,6 @@ a {
 @media (prefers-reduced-motion: no-preference) {
   .item-animation {
     animation: wipe-enter 1s 1;
-    animation-iteration-count: 1;
   }
 }
 
@@ -216,23 +242,146 @@ a {
   }
 }
 
+/* People Cards */
+.peopleCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  margin: 4rem 5vw;
+  padding: 0;
+  list-style-type: none;
+}
+
+.peopleCard {
+  position: relative;
+  display: block;
+  height: 100%;  
+  border-radius: calc(var(--curve) * 1px);
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.peopleCardImage {      
+  width: 100%;
+  height: auto;
+}
+
+.peopleCardOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;      
+  border-radius: calc(var(--curve) * 1px);    
+  background: linear-gradient(to bottom, rgba(0,0,0, 0) 35%,var(--surface-color) 35%,var(--surface-color) 100%);    
+  transform: translateY(100%);
+  transition: .2s ease-in-out;
+}
+
+.peopleCard .peopleCardOverlay {
+  transform: translateY(0);
+}
+
+.peopleCardHeader {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  padding: 2em;
+  border-radius: calc(var(--curve) * 1px) 0 0 0;    
+  background-color: var(--surface-color);
+  transform: translateY(30%);
+  transition: .2s ease-in-out;
+}
+
+.peopleCardArc {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  bottom: 100%;
+  right: 0;      
+  z-index: 1;
+}
+
+.peopleCardArc path {
+  fill: var(--surface-color);
+  d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+}       
+
+.peopleCard:hover .peopleCardHeader {
+  transform: translateY(-50%);
+}
+
+.peopleCardIcon {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;      
+  border-radius: 50%;      
+}
+
+.peopleCardTitle {
+  font-size: 2em;
+  margin: 0 0 .3em;
+  color: #000;
+}
+
+.peopleCardStatus {
+  font-family: "barlow";  
+  font-size: .8em;
+  color: #6A515E;
+}
+
+.peopleCardDescription {
+  padding: 0 2em 2em;
+  margin: 0;
+  color: #6A515E;
+  font-family: "barlow";   
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
 /* Sections */
 #introduction {
+  background-color: #ffffff;
 }
 
 #projects {
+  background-color: #5bd3c7;
+  box-shadow: 0 0 25px 10px rgba(91, 211, 199, 0.5);
+  z-index: 1;
 }
 
 #people {
+  background-color: #ffffff;
 }
 
 #interests {
+  background-color: #e0e4ee;
+  box-shadow: 0 0 25px 10px rgba(224, 228, 238, 0.5);
+  z-index: 1;
 }
 
 /* Applied to all sections */
 .section {
+  padding: 5rem 0;
   height: 100vh;
   width: 85vw;
+}
+
+/* Section animation */
+@keyframes polygon-in-opposing-corners {
+  from {
+    clip-path: polygon(0 0, 50% 50%, 100% 100%, 50% 50%);
+  }
+  to {
+    clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
+  }
+}
+
+[transition-style="in:polygon:opposing-corners"] {
+  animation: 1.5s cubic-bezier(.25, 1, .30, 1) polygon-in-opposing-corners both;
 }
 
 /* The sidebar menu */
@@ -248,6 +397,7 @@ a {
   padding-top: 10vmin; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
   border-radius: 0 10px 7px 0;
+  box-shadow: 10px 0 20px 0 rgba(0, 0, 0, 0.5)
 }
 
 /* The sidebar links */
@@ -283,6 +433,18 @@ a {
 
 .sideText {
   padding: 8px 8px 8px 32px;
+  display: flex;
+}
+
+.sideIcon {
+  padding-right: 8px;
+  position: relative;
+}
+
+.sideIconFormat {
+  position: absolute;
+  bottom: 3px;
+  left: -24px;
 }
 
 
@@ -290,41 +452,4 @@ a {
 @media screen and (max-height: 450px) {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
-}
-
-/* Cup filling animation */
-.cup {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 150px;
-  height: 180px;
-  border: 6px solid #262626;
-  border-top: 2px solid transparent;
-  border-radius: 15px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  background: url(https://image.ibb.co/fmHm66/wave.png);
-  background-position: 0px 350px;
-  background-repeat: repeat-x;
-  animation: filling 10s ease-in-out infinite;
-  box-shadow: 0 0 0 6px #fff, 0 20px 35px rgba(0,0,0,1);
-}
-
-.cup:before {
-  content: '';
-  position: absolute;
-  width: 50px;
-  height: 80px;
-  border: 6px solid #fff;
-  right: -57px;
-  top: 30px;
-  border-top-right-radius: 35px;
-  border-bottom-right-radius: 35px;
-}
-
-@keyframes filling {
-  50% {background-position: 3000px 0px;}
-  100% {background-position: 6000px 350px;}
 }
