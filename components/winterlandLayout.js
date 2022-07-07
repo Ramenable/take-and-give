@@ -6,7 +6,7 @@ export default function WinterlandLayout({ children }) {
         // Winterland snow animation
         // https://codepen.io/alphardex/pen/dyPorwJ
         <div class={styles['winterland']}>
-            <Link href='/'>
+            <Link href='/interests/seasons'>
                 <a class='home'>Go Back Home</a>
             </Link>
             <a class={styles['attribution']} href="https://www.vecteezy.com/free-vector/winter-landscape">Winter Landscape Vectors by Vecteezy</a>

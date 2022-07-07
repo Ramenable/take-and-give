@@ -59,31 +59,6 @@ export default function Home() {
               He has told you, O man, what is good; and what does the Lord require of you but to do justice, and to love kindness, and to walk humbly with your God?
               <br></br>-Micah 6:6-8
               </p>
-              {/* <div className="grid">
-                <Link href="/themes/ocean">
-                  <a className="card item-animation">
-                    <h3>Dive into the Ocean &rarr;</h3>
-                  </a>
-                </Link>
-
-                <Link href="/themes/campfire">
-                  <a className="card item-animation">
-                    <h3>Sit by the Campfire &rarr;</h3>
-                  </a>
-                </Link>
-
-                <Link href="/themes/winterland">
-                  <a className="card item-animation">
-                    <h3>Walk through Winterland &rarr;</h3>
-                  </a>
-                </Link>
-
-                <Link href="/themes/grass">
-                  <a className="card item-animation">
-                    <h3>Sway with the Grass &rarr;</h3>
-                  </a>
-                </Link>
-              </div> */}
             </div>
 
             <div ref={projectsRef} id="projects" className="section" transition-style={`${projectsIsVisible ? "in:polygon:opposing-corners" : ""}`}>
@@ -92,7 +67,7 @@ export default function Home() {
               </h1>
 
               <p className="description">
-                Things I Enjoyed Coding
+                things I enjoyed coding
               </p>
 
               <div className="grid">
@@ -128,7 +103,7 @@ export default function Home() {
               </h1>
 
               <p className="description">
-                Friends I Want to Shoutout
+                friends I want to shoutout
               </p>
 
               <ul class="peopleCards">
@@ -176,7 +151,7 @@ export default function Home() {
                           <span class="peopleCardStatus">AWS SDE Intern</span>
                         </div>
                       </div>
-                      <p class="peopleCardDescription">"You make me feel special"</p>
+                      <p class="peopleCardDescription">My cousin!</p>
                     </div>
                   </a>
                 </li>
@@ -208,7 +183,7 @@ export default function Home() {
                           <span class="peopleCardStatus">Opportunity Research Scholar at CMU</span>
                         </div>
                       </div>
-                      <p class="peopleCardDescription">On a journey to learn the meaning of his name</p>
+                      <p class="peopleCardDescription">On a quest to learn the meaning of his name</p>
                     </div>
                   </a>
                 </li>
@@ -235,11 +210,35 @@ export default function Home() {
               <h1 className="title">
                 Interests
               </h1>
+
+              <p className="description">
+                maybe the most interesting part of the site
+              </p>
+
               <div className="grid">
-                <Link href="https://lolchess.gg/profile/na/chineseartist007">
+                <Link href="/interests/castLot">
                   <a className="card item-animation">
-                    <h3>Smodge &rarr;</h3>
-                    <p>Bobo.</p>
+                    <h3>"Lots" of Reading &rarr;</h3>
+                  </a>
+                </Link>
+                <Link href="/interests/unphogettable">
+                  <a className="card item-animation">
+                    <h3>Unpho'gettable &rarr;</h3>
+                  </a>
+                </Link>
+                <Link href="/interests/kpopKwangya">
+                  <a className="card item-animation">
+                    <h3>Kpop Kwangya &rarr;</h3>
+                  </a>
+                </Link>
+                <Link href="/interests/dreamCatalog">
+                  <a className="card item-animation">
+                    <h3>Dream Catalog &rarr;</h3>
+                  </a>
+                </Link>
+                <Link href="/interests/seasons">
+                  <a className="card item-animation">
+                    <h3>CSSeasons &rarr;</h3>
                   </a>
                 </Link>
               </div>
@@ -251,13 +250,7 @@ export default function Home() {
       {/* <SideNavbarLayout></SideNavbarLayout> */}
 
       <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
-        </a>
+          <h2>結束</h2>
       </footer>
     </div>
   )

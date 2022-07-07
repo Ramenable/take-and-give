@@ -5,7 +5,7 @@ export default function OceanLayout({ children }) {
     return (
         // Ocean background
         <div class={styles.landscape}>
-        <Link href='/'>
+        <Link href='/interests/seasons'>
             <a class='home'>Go Back Home</a>
         </Link>
 

@@ -51,7 +51,7 @@ export default function GrassLayout({ children }) {
     return (
         // Grass in night sky animation
         <div id={styles['bg']}>
-            <Link href='/'>
+            <Link href='/interests/seasons'>
                 <a class='home'>Go Back Home</a>
             </Link>
             <canvas id='grass'></canvas>

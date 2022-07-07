@@ -5,7 +5,7 @@ export default function CampfireLayout({ children }) {
     return (
         // Campfire background
         <div id={styles['art']}>
-            <Link href='/'>
+            <Link href='/interests/seasons'>
                 <a class='home' id={styles['corner-button']}>Go Back Home</a>
             </Link>
             <div id={styles['sky']}>
